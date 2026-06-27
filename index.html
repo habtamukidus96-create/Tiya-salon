@@ -3,498 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collective Beauty - Medical Spa Calabasas</title>
+    <title>Selam Beauty Parlour - Creative Styling</title>
     <!-- Google Fonts for Elegant Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --primary-muted: #a37a6b;
-            --primary-dark: #5c3e35;
-            --text-dark: #2c221e;
-            --text-light: #ffffff;
-            --bg-cream: #faf7f2;
-            --bg-overlay: rgba(250, 247, 242, 0.95);
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'Montserrat', sans-serif;
-        }
-
+        /* --- RESET & BASE STYLES --- */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-
         body {
-            font-family: var(--font-sans);
-            color: var(--text-dark);
-            background-color: var(--bg-cream);
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #fff;
             line-height: 1.6;
-            font-size: 14px;
         }
-
-        /* Utility Components */
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--primary-muted);
-            color: var(--text-light);
+        a {
             text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 2px;
             text-decoration: none;
-            border-radius: 20px;
-            transition: background 0.3s ease;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--text-light);
-            color: var(--text-light);
-        }
-
-        .btn-outline:hover {
-            background: var(--text-light);
-            color: var(--primary-dark);
-        }
-
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: 36px;
-            font-weight: 400;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-
-        /* Top Notification Bar */
-        .top-bar {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            text-align: center;
-            font-size: 11px;
-            font-style: italic;
-            padding: 8px 0;
+            color: inherit;
+            font-size: 13px;
             letter-spacing: 1px;
+            font-weight: 600;
         }
 
-        /* Header / Navigation */
-        header {
-            position: absolute;
-            top: 32px;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-            padding: 20px 50px;
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .serif-italic {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #c5a880; /* Elegant Gold Accent */
+            font-size: 28px;
+        }
+
+        /* --- TOP BAR --- */
+        .top-bar {
+            background-color: #0b0b0b;
+            color: #aaa;
+            font-size: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+        }
+        .top-bar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+        .top-bar .info-left span {
+            margin-right: 20px;
+        }
+        .top-bar .info-left i {
+            color: #c5a880;
+            margin-right: 5px;
+        }
+        .top-bar .social-right a {
+            margin-left: 15px;
+            color: #aaa;
+            font-size: 14px;
+        }
+        .top-bar .social-right a:hover {
+            color: #c5a880;
+        }
 
+        /* --- NAVIGATION --- */
+        .navbar {
+            background-color: rgba(11, 11, 11, 0.95);
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .logo {
-            font-family: var(--font-serif);
-            font-size: 26px;
-            color: var(--text-light);
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: #fff;
         }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
+        .logo i {
+            font-size: 30px;
+            color: #c5a880;
+            margin-right: 10px;
+        }
+        .logo-text h1 {
+            font-size: 22px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .logo-text p {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #aaa;
             text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            margin: 0 15px;
-            font-weight: 400;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-links a {
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #c5a880;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             height: 90vh;
-            min-height: 650px;
-            background: url('d56e3752685e55b33118bc3d1ba92f84.jpg') center center/cover no-repeat;
+            /* Updated to look for hero.jpg locally */
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                        url('hero.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            padding: 0 10%;
+            color: #fff;
+            padding-top: 80px;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.15);
-        }
-
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 500px;
-            color: var(--text-light);
+            max-width: 700px;
         }
-
-        .hero-tagline {
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 52px;
-            font-weight: 400;
+        .hero-content h2 {
+            font-size: 54px;
+            font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin: 15px 0 25px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-
-        .hero p {
+        .hero-content p {
             font-size: 14px;
-            margin-bottom: 30px;
-            font-weight: 300;
-            line-height: 1.6;
-            opacity: 0.9;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ddd;
+            margin-bottom: 35px;
+        }
+        .hero-btns {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .btn-primary {
+            border: 1px solid #fff;
+            padding: 15px 30px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #c5a880;
+            border-color: #c5a880;
+        }
+        .video-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .video-btn i {
+            background-color: #c5a880;
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+        .video-btn:hover i {
+            transform: scale(1.1);
         }
 
-        /* Floating Overlap Card */
-        .overlap-card-container {
-            max-width: 800px;
-            margin: -100px auto 80px auto;
-            position: relative;
-            z-index: 5;
-            padding: 0 20px;
+        /* --- ABOUT SECTION --- */
+        .about-section {
+            padding: 90px 0;
+            background-color: #fff;
         }
-
-        .overlap-card {
-            background-color: var(--bg-overlay);
-            border: 1px solid rgba(163, 122, 107, 0.3);
-            border-radius: 12px;
-            padding: 40px 60px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
-
-        .overlap-card h2 {
-            font-family: var(--font-serif);
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .about-images img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+        .about-images img:nth-child(2) {
+            transform: translateY(30px);
+        }
+        .about-content-box {
+            background-color: #fcfbf7;
+            padding: 50px;
+            border: 1px solid #f2ede4;
+        }
+        .about-content-box h3 {
             font-size: 32px;
-            font-weight: 400;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-
-        .overlap-card .sub-serif {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 22px;
-            color: var(--primary-muted);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 10px;
             margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .about-content-box p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .counter-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eaddca;
+            padding-top: 30px;
+        }
+        .counter-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .counter-item i {
+            font-size: 32px;
+            color: #c5a880;
+        }
+        .counter-text h4 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .counter-text p {
+            margin: 0;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
         }
 
-        .overlap-card p {
-            font-size: 13px;
-            max-width: 500px;
-            margin: 0 auto 25px auto;
-            color: #555;
-        }
-
-        /* Experience Section */
-        .experience-section {
-            padding: 60px 5%;
+        /* --- SERVICES SECTION --- */
+        .services-section {
+            padding: 90px 0;
+            background-color: #faf8f5;
             text-align: center;
-            background-color: var(--bg-cream);
         }
-
-        .experience-grid {
+        .services-header h3 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        .services-header p {
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 13px;
+            color: #777;
+        }
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            max-width: 1100px;
-            margin: 50px auto 40px auto;
         }
-
-        .experience-card img {
+        .service-card {
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card img {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            height: 280px;
             object-fit: cover;
-            border-radius: 24px;
-            margin-bottom: 20px;
         }
-
-        .experience-card h3 {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 24px;
-            font-weight: 400;
-            color: var(--primary-dark);
+        .service-info {
+            padding: 25px;
+        }
+        .service-info h4 {
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
-
-        .experience-card p {
+        .service-info p {
             font-size: 13px;
-            color: #666;
-            padding: 0 15px;
+            color: #777;
         }
 
-        /* Split Feature Section */
-        .split-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background-color: #fff;
-            align-items: center;
-        }
-
-        .split-text {
-            padding: 80px 10%;
-        }
-
-        .split-image img {
-            width: 100%;
-            height: 100%;
-            min-height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Experts Section with Marble Background Texture */
-        .experts-section {
-            background: url('marble-bg.jpg') center center/cover no-repeat;
-            padding: 100px 10%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .experts-image img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: #dcd1cc;
-            padding: 80px 8% 20px 8%;
-            font-size: 13px;
-        }
-
-        .footer-logo-zone {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .footer-logo {
-            font-family: var(--font-serif);
-            font-size: 36px;
-            color: var(--text-light);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .footer-tagline {
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.7;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
-            gap: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 60px;
-        }
-
-        .footer-col h4 {
-            color: var(--text-light);
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .footer-col p, .footer-col a {
-            color: #cbbab3;
-            text-decoration: none;
-            line-height: 1.8;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .footer-col a:hover {
-            color: var(--text-light);
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-            font-size: 11px;
-            opacity: 0.6;
-        }
-
-        .footer-bottom a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        /* Responsive Breakpoints */
+        /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 992px) {
-            .experience-grid, .split-section, .experts-section, .footer-grid {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
-            header { padding: 20px; }
-            nav { display: none; } /* Simplified for layout purposes */
-            .split-image { order: -1; }
-            .overlap-card { padding: 30px 20px; }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-content h2 {
+                font-size: 40px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+            .about-images img:nth-child(2) {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Promo Strip -->
-    <div class="top-bar">Opening Fall 2025!</div>
-
-    <!-- Main Navigation Header -->
-    <header>
-        <a href="#" class="logo">Collective Beauty</a>
-        <nav>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Memberships</a>
-            <a href="#">Contact</a>
-        </nav>
-        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 10px;">Book Now</a>
-    </header>
-
-    <!-- Hero Unit -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tagline">Medical Spa Calabasas</span>
-            <h1>Elevating Beauty, Together</h1>
-            <p>With expertly delivered injectables, advanced laser technology, and customized skin care, we create subtle shifts that smooth, lift, and illuminate your natural features.</p>
-            <a href="#" class="btn">Book Consultation</a>
-        </div>
-    </section>
-
-    <!-- Floating Statement Card -->
-    <div class="overlap-card-container">
-        <div class="overlap-card">
-            <h2>Your most beautiful day, every day.</h2>
-            <div class="sub-serif">Injectables · Lasers · Advanced Skin Treatments · Wellness</div>
-            <p>At Collective Beauty, our patients aren't seeking dramatic change; they're choosing refined enhancements that honor their natural beauty.</p>
-            <a href="#" class="btn" style="padding: 10px 24px;">Shift Into You</a>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="info-left">
+                <span><i class="fa-solid fa-location-dot"></i> Bole Atlas, Addis Ababa, ET</span>
+                <span><i class="fa-solid fa-envelope"></i> info@selambeauty.com</span>
+            </div>
+            <div class="social-right">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" style="margin-left: 25px; color: #fff;">Book Now!</a>
+            </div>
         </div>
     </div>
 
-    <!-- Grid: The Experience -->
-    <section class="experience-section">
-        <h2 class="section-title" style="font-style: italic;">Your Collective Beauty Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <img src="experience-1.jpg" alt="Consultation at Collective Beauty">
-                <h3>Here your time is valued</h3>
-                <p>Every visit gives you space to ask questions and feel heard.</p>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <div class="logo-text">
+                    <h1>SELAM</h1>
+                    <p>Beauty Parlour</p>
+                </div>
             </div>
-            <div class="experience-card">
-                <img src="experience-2.jpg" alt="Clinical treatment application">
-                <h3>Clinical skill and precision</h3>
-                <p>From Botox to advanced lasers, every treatment reflects clinical skill and precision.</p>
-            </div>
-            <div class="experience-card">
-                <img src="experience-3.jpg" alt="Radiant post-treatment skin texture">
-                <h3>Beautiful outcomes matter</h3>
-                <p>The confidence they give you matters even more.</p>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
         </div>
-        <a href="#" class="btn">Explore Treatments</a>
-    </section>
+    </nav>
 
-    <!-- Split Banner: Plan Section -->
-    <section class="split-section">
-        <div class="split-text">
-            <h2 class="section-title">Let's Create Your Beauty Plan, Together</h2>
-            <p style="color: #555; margin-bottom: 30px; font-weight: 300;">Your beauty journey begins with a personalized consultation. Together, we will design a plan that speaks to your goals, respects your lifestyle, and enhances your skin.</p>
-            <a href="#" class="btn">Get Started Today</a>
-        </div>
-        <div class="split-image">
-            <img src="beauty-plan.jpg" alt="Collective Beauty Interior Design Aesthetics">
-        </div>
-    </section>
-
-    <!-- Experts Section -->
-    <section class="experts-section">
-        <div class="experts-image">
-            <img src="collective-experts.jpg" alt="Collective Beauty Expert Team Staff">
-        </div>
-        <div class="experts-text">
-            <h2 class="section-title" style="font-style: italic;">Your Collective Experts</h2>
-            <p style="color: #555; margin-bottom: 30px; font-weight: 300;">Our approach to medical aesthetics is grounded in education, transparency, and thoughtful long-term planning. You'll never feel rushed or pressured, only supported by an expert who sees the bigger picture and honors your individual beauty journey.</p>
-            <a href="#" class="btn">Meet Your Team</a>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="serif-italic">Creative Styling</span>
+                <h2>Beauty Salon<br>Fashion For African Women</h2>
+                <p>Braiding • Hair Treatment • Nails • Traditional Makeup</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn-primary">Get An Appointment!</a>
+                    <div class="video-btn">
+                        <i class="fa-solid fa-play"></i>
+                        <a href="#">Watch Video</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Main Global Footer -->
-    <footer>
-        <div class="footer-logo-zone">
-            <span class="footer-logo">Collective Beauty</span>
-            <span class="footer-tagline">Elevating Beauty, Together</span>
-        </div>
-        
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>About Us</h4>
-                <p style="font-size: 12px; font-weight: 300;">Collective Beauty is a boutique medical spa in Calabasas, California, specializing in injectables, Botox, fillers, laser treatments, and skin care for patients across Westlake Village, Malibu, Hidden Hills, Agoura Hills, and Woodland Hills.</p>
-                <a href="#" class="btn btn-outline" style="margin-top: 15px; font-size: 10px; padding: 10px 20px;">Book Consultation</a>
-            </div>
-            <div class="footer-col">
-                <h4>Visit Us</h4>
-                <p>23622 Calabasas Road Unit #111<br>Calabasas, CA 91302</p>
-                <h4 style="margin-top: 25px; margin-bottom: 10px;">Contact Us</h4>
-                <p>📞 818-221-1044</p>
-                <p>✉️ info@collectivebeautymedspa.com</p>
-            </div>
-            <div class="footer-col">
-                <h4>Our Hours</h4>
-                <p>Mon—Fri: 10am–6pm</p>
-                <p>Sat: by appointment</p>
-                <p>Sun: closed</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-                <a href="#">Beauty Stacks</a>
-                <a href="#">Memberships</a>
-                <a href="#">Services</a>
+    <!-- ABOUT US SECTION -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Left Column: Local Expert Images -->
+                <div class="about-images">
+                    <img src="image1.jpg" alt="African Hair Styling Expert">
+                    <img src="image2.jpg" alt="Ethiopian Traditional Glow Expert">
+                </div>
+                <!-- Right Column: Content Box -->
+                <div class="about-content-box">
+                    <span class="serif-italic">About Us</span>
+                    <h3>WE UNDERSTAND<br>YOUR STYLE</h3>
+                    <p>Our talented team specializes in traditional Habesha styling, modern natural hair textures, flawless braids, and premium skincare routines. We treat each client as royalty, matching ancient heritage glow with modern trends.</p>
+                    
+                    <div class="counter-row">
+                        <div class="counter-item">
+                            <i class="fa-solid fa-scissors"></i>
+                            <div class="counter-text">
+                                <h4>12</h4>
+                                <p>Branches</p>
+                            </div>
+                        </div>
+                        <div class="counter-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <div class="counter-text">
+                                <h4>9500+</h4>
+                                <p>Happy Customers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <div>© 2025 Collective Beauty Med Spa. All Rights Reserved.</div>
-            <div>
-                <a href="#">Sitemap</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Disclaimer</a>
-                <a href="#">Site Credits</a>
+    <!-- SERVICES SECTION -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <span class="serif-italic">Welcome</span>
+                <h3>EXPLORE OUR SERVICES</h3>
+                <p>We ensure enough dedicated quality time during your appointment for complete in-depth consultation with your desired flawless look.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <img src="image3.jpg" alt="Habesha & Custom Braids">
+                    <div class="service-info">
+                        <h4>Habesha & Custom Braids</h4>
+                        <p>Protective, neat, and stunning traditional and modern braid patterns.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <img src="eb6b0a1246d035d9e4248620f4405c11.jpg" alt="Melanin Makeup Artistry">
+                    <div class="service-info">
+                        <h4>Melanin Bridal Glow</h4>
+                        <p>Specialized bridal, traditional Albaso, and celebratory cosmetics.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <img src="image3.jpg" alt="Natural Hair Therapy">
+                    <div class="service-info">
+                        <h4>Natural Hair & Loc Therapy</h4>
+                        <p>Deep treatments and specialized twists crafted for textured hair types.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
 </body>
 </html>
