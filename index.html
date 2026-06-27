@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collective Beauty - Medical Spa Calabasas</title>
+    <!-- Google Fonts for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-muted: #a37a6b;
+            --primary-dark: #5c3e35;
+            --text-dark: #2c221e;
+            --text-light: #ffffff;
+            --bg-cream: #faf7f2;
+            --bg-overlay: rgba(250, 247, 242, 0.95);
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* Utility Components */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-muted);
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-light);
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-light);
+            color: var(--primary-dark);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            font-size: 11px;
+            font-style: italic;
+            padding: 8px 0;
+            letter-spacing: 1px;
+        }
+
+        /* Header / Navigation */
+        header {
+            position: absolute;
+            top: 32px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            margin: 0 15px;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 650px;
+            background: url('d56e3752685e55b33118bc3d1ba92f84.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            color: var(--text-light);
+        }
+
+        .hero-tagline {
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Floating Overlap Card */
+        .overlap-card-container {
+            max-width: 800px;
+            margin: -100px auto 80px auto;
+            position: relative;
+            z-index: 5;
+            padding: 0 20px;
+        }
+
+        .overlap-card {
+            background-color: var(--bg-overlay);
+            border: 1px solid rgba(163, 122, 107, 0.3);
+            border-radius: 12px;
+            padding: 40px 60px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .overlap-card h2 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .overlap-card .sub-serif {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 22px;
+            color: var(--primary-muted);
+            margin-bottom: 20px;
+        }
+
+        .overlap-card p {
+            font-size: 13px;
+            max-width: 500px;
+            margin: 0 auto 25px auto;
+            color: #555;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 60px 5%;
+            text-align: center;
+            background-color: var(--bg-cream);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 50px auto 40px auto;
+        }
+
+        .experience-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 24px;
+            margin-bottom: 20px;
+        }
+
+        .experience-card h3 {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .experience-card p {
+            font-size: 13px;
+            color: #666;
+            padding: 0 15px;
+        }
+
+        /* Split Feature Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #fff;
+            align-items: center;
+        }
+
+        .split-text {
+            padding: 80px 10%;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Experts Section with Marble Background Texture */
+        .experts-section {
+            background: url('marble-bg.jpg') center center/cover no-repeat;
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .experts-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: #dcd1cc;
+            padding: 80px 8% 20px 8%;
+            font-size: 13px;
+        }
+
+        .footer-logo-zone {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-tagline {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #cbbab3;
+            text-decoration: none;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--text-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            font-size: 11px;
+            opacity: 0.6;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .experience-grid, .split-section, .experts-section, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            header { padding: 20px; }
+            nav { display: none; } /* Simplified for layout purposes */
+            .split-image { order: -1; }
+            .overlap-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Promo Strip -->
+    <div class="top-bar">Opening Fall 2025!</div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <a href="#" class="logo">Collective Beauty</a>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Memberships</a>
+            <a href="#">Contact</a>
+        </nav>
+        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 10px;">Book Now</a>
+    </header>
+
+    <!-- Hero Unit -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tagline">Medical Spa Calabasas</span>
+            <h1>Elevating Beauty, Together</h1>
+            <p>With expertly delivered injectables, advanced laser technology, and customized skin care, we create subtle shifts that smooth, lift, and illuminate your natural features.</p>
+            <a href="#" class="btn">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- Floating Statement Card -->
+    <div class="overlap-card-container">
+        <div class="overlap-card">
+            <h2>Your most beautiful day, every day.</h2>
+            <div class="sub-serif">Injectables · Lasers · Advanced Skin Treatments · Wellness</div>
+            <p>At Collective Beauty, our patients aren't seeking dramatic change; they're choosing refined enhancements that honor their natural beauty.</p>
+            <a href="#" class="btn" style="padding: 10px 24px;">Shift Into You</a>
+        </div>
+    </div>
+
+    <!-- Grid: The Experience -->
+    <section class="experience-section">
+        <h2 class="section-title" style="font-style: italic;">Your Collective Beauty Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <img src="experience-1.jpg" alt="Consultation at Collective Beauty">
+                <h3>Here your time is valued</h3>
+                <p>Every visit gives you space to ask questions and feel heard.</p>
+            </div>
+            <div class="experience-card">
+                <img src="experience-2.jpg" alt="Clinical treatment application">
+                <h3>Clinical skill and precision</h3>
+                <p>From Botox to advanced lasers, every treatment reflects clinical skill and precision.</p>
+            </div>
+            <div class="experience-card">
+                <img src="experience-3.jpg" alt="Radiant post-treatment skin texture">
+                <h3>Beautiful outcomes matter</h3>
+                <p>The confidence they give you matters even more.</p>
+            </div>
+        </div>
+        <a href="#" class="btn">Explore Treatments</a>
+    </section>
+
+    <!-- Split Banner: Plan Section -->
+    <section class="split-section">
+        <div class="split-text">
+            <h2 class="section-title">Let's Create Your Beauty Plan, Together</h2>
+            <p style="color: #555; margin-bottom: 30px; font-weight: 300;">Your beauty journey begins with a personalized consultation. Together, we will design a plan that speaks to your goals, respects your lifestyle, and enhances your skin.</p>
+            <a href="#" class="btn">Get Started Today</a>
+        </div>
+        <div class="split-image">
+            <img src="beauty-plan.jpg" alt="Collective Beauty Interior Design Aesthetics">
+        </div>
+    </section>
+
+    <!-- Experts Section -->
+    <section class="experts-section">
+        <div class="experts-image">
+            <img src="collective-experts.jpg" alt="Collective Beauty Expert Team Staff">
+        </div>
+        <div class="experts-text">
+            <h2 class="section-title" style="font-style: italic;">Your Collective Experts</h2>
+            <p style="color: #555; margin-bottom: 30px; font-weight: 300;">Our approach to medical aesthetics is grounded in education, transparency, and thoughtful long-term planning. You'll never feel rushed or pressured, only supported by an expert who sees the bigger picture and honors your individual beauty journey.</p>
+            <a href="#" class="btn">Meet Your Team</a>
+        </div>
+    </section>
+
+    <!-- Main Global Footer -->
+    <footer>
+        <div class="footer-logo-zone">
+            <span class="footer-logo">Collective Beauty</span>
+            <span class="footer-tagline">Elevating Beauty, Together</span>
+        </div>
+        
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p style="font-size: 12px; font-weight: 300;">Collective Beauty is a boutique medical spa in Calabasas, California, specializing in injectables, Botox, fillers, laser treatments, and skin care for patients across Westlake Village, Malibu, Hidden Hills, Agoura Hills, and Woodland Hills.</p>
+                <a href="#" class="btn btn-outline" style="margin-top: 15px; font-size: 10px; padding: 10px 20px;">Book Consultation</a>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <p>23622 Calabasas Road Unit #111<br>Calabasas, CA 91302</p>
+                <h4 style="margin-top: 25px; margin-bottom: 10px;">Contact Us</h4>
+                <p>📞 818-221-1044</p>
+                <p>✉️ info@collectivebeautymedspa.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Our Hours</h4>
+                <p>Mon—Fri: 10am–6pm</p>
+                <p>Sat: by appointment</p>
+                <p>Sun: closed</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Beauty Stacks</a>
+                <a href="#">Memberships</a>
+                <a href="#">Services</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2025 Collective Beauty Med Spa. All Rights Reserved.</div>
+            <div>
+                <a href="#">Sitemap</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Site Credits</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
